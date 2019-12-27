@@ -1,12 +1,20 @@
 # Flask sample project to ask google Speech to Text
 
-This is sample project to host Flask with swagger and ask Speech to Text Ancle Google
+This is sample project to host Flask with swagger and ask Speech to Text using SPEECHMATICS
 
 ## IMPORTANT
 
-Toy need google API KEY: [Google API KEY](https://cloud.google.com/docs/authentication/api-keys)
+You need SPEECHMATICS api key: [Google API KEY](https://app.speechmatics.com/account/)
 
-Download json file from google and save as `./keys/SpeechToText-google.json`
+You need create new file `./keys/speechmatics_config.json` and put json data. For example:
+
+```json
+{
+    "userId": "[USER_ID]",
+    "apiAuthToken": "[API_AUTH_TOKEN]",
+    "language": "pl"
+}
+```
 
 ## Thanks
 
@@ -14,8 +22,7 @@ Download json file from google and save as `./keys/SpeechToText-google.json`
 - [Docs](https://python101.readthedocs.io/pl/latest/webflask/)
 - [Flask-RESTPlus](https://flask-restplus.readthedocs.io/en/stable/quickstart.html#a-minimal-api)
 - [Visual Studio Code Tutorial](https://code.visualstudio.com/docs/python/tutorial-flask)
-- [Google Cloud Speech to Text](https://cloud.google.com/speech-to-text/)
-- [Google API KEY](https://cloud.google.com/docs/authentication/api-keys)
+- [SPEECHMATICS](https://app.speechmatics.com/)
 
 ## Useful commands
 
@@ -119,7 +126,7 @@ docker build -t [DOCKER_IMAGE_NAME]:[TAG] .
 - - example
 
 ```powershell
-docker build -t google_s2t:latest .
+docker build -t speechmatics_s2t:latest .
 ```
 
 - Run docker images
@@ -131,5 +138,5 @@ docker run -d -p [PORT_ON_HOST]:[PORT_ON_DOCKER_NETWORK] [DOCKER_IMAGE_NAME]:[TA
 - - example
 
 ```powershell
-docker run -d -p 5000:5000 google_s2t:latest
+docker run -d -p 5000:5000 speechmatics_s2t:latest
 ```
