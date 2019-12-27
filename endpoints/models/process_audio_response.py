@@ -23,7 +23,3 @@ class ProcessApudioResponse:
 
     def set_text(self, text):
         self.text = text
-
-    def ask_uncle_google(self):
-        speechmaticsS2T = SpeechmaticsSpeechToText(self.full_path)
-        self.set_text(speechmaticsS2T.transcript_audio())

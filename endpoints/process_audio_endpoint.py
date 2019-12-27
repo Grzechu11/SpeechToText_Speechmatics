@@ -4,6 +4,7 @@ import os
 import werkzeug
 import endpoints.models.process_audio_request as process_audio_request
 from run import app, api, Resource, request, fields, abort, reqparse
+from logic.speech2text_speechmatics import SpeechmaticsSpeechToText
 
 UPLOAD_DIRECTORY = "api_uploaded_files"
 
@@ -37,6 +38,7 @@ class ProcessAudioEndpoint(Resource):
         file_to_process = ProcessApudioResponse(
             audio_file.filename, audio_file_path)
 
-        file_to_process.ask_uncle_google()
+        speechmaticsS2T = SpeechmaticsSpeechToText(audio_file_path)
+        file_to_process.set_text(speechmaticsS2T.transcript_audio())
 
         return file_to_process
