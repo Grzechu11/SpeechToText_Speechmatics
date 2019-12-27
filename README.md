@@ -4,7 +4,7 @@ This is sample project to host Flask with swagger and ask Speech to Text using S
 
 ## IMPORTANT
 
-You need SPEECHMATICS api key: [Google API KEY](https://app.speechmatics.com/account/)
+You need SPEECHMATICS api key: [Account info](https://app.speechmatics.com/account/)
 
 You need create new file `./keys/speechmatics_config.json` and put json data. For example:
 
